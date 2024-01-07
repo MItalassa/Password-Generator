@@ -88,127 +88,125 @@ var upperCasedCharacters = [
   'Z'
 ];
 
-// Function to prompt user for password options
-const TYPE_NUMBER = 0;
-const TYPE_BOOLEAN = 1;
-const TYPE_STRING = 2;
+// // Function to prompt user for password options
+// const TYPE_NUMBER = 0;
+// const TYPE_BOOLEAN = 1;
+// const TYPE_STRING = 2;
 
-const config = {
-  len: 8,
-  upc: false,
-  loc: false,
-  num: false,
-  sym: false
-};
+// const getPasswordOptions = {
+//   length: "",
+//   uppercase: "",
+//   lowercase: "",
+//   numbers: "",
+//   specialchar: ""
+// };
 
-while (true) {
-  const len = ask('How many charcters would you like? (8-128)', TYPE_NUMBER);
-  if (len <= 128 && len >= 8) {
-    config.len = len; break;
-  } else {
-    alert("Password must be 8 to 128 characters long!");
-  }
-}
+// let passwordOpts = '';
+// let passCharacters=[];
 
-const upc = ask('Would you like to use capital letters?', TYPE_BOOLEAN);
-if (upc) { config.upc = upc; }
-
-const loc = ask('Would you like to use lowercase letters?', TYPE_BOOLEAN);
-if (loc) { config.loc = loc; }
-
-const num = ask('Would you like to use numbers?', TYPE_BOOLEAN);
-if (num) { config.num = num; }
-
-const sym = ask('Would you like to use special characters?', TYPE_BOOLEAN);
-if (sym) { config.sym = sym; }
-
-console.log(config);
-
-function ask(msg, type) {
-  let result;
-  if (type === TYPE_BOOLEAN) {
-    result = confirm(msg);
-  } else if (type === TYPE_NUMBER) {
-    result = parseInt(prompt(msg));
-  } else if (type === TYPE_STRING) {
-    result = prompt(msg);
-  } else {
-    result = "";
-  }
-  return result;
-}
-
-
-// let passInfo= "";
-// let chosenOpts= "";
-
-// function getPasswordOptions() {
-// let passLength = prompt("please choose number between 1 and 128")
-// passLength = parseInt(passLength);
-// console.log(passLength)
-// if (passLength>= 8 && passLength <= 128) {
-//   const getNumbers = window.confirm("Would you like to include NUMBERS?");
-//   if (getNumbers) {
-//     passInfo += passwordOptions.num;
-//     chosenOpts.push(getRandomChar(passwordOptions.num));
-//   };
-
-//   const getSpecialCharacters = window.confirm("Would you like to include SPECIAL characters?");
-//   if (getSpecialCharacters) {
-//     passInfo += passwordOptions.specialChar;
-//     chosenOpts.push(getRandomChar(passwordOptions.specialChar));
-//   };
-
-//   const getLowerCase = window.confirm("Would you like to include LOWERCASE characters?");
-//   if (getLowerCase) {
-//     passInfo += passwordOptions.lowerCase;
-//     chosenOpts.push(getRandomChar(passwordOptions.lowerCase));
-//   };
-  
-//   const getUpperCase = window.confirm("Would you like to include UPPERCASE characters?");
-//   if (getUpperCase) {
-//     passInfo += passwordOptions.upperCase;
-//     chosenOpts.push(getRandomChar(passwordOptions.upperCase));
-//   };
-//   if (!passInfo) {
-//     window.alert("You need to select at least one option, please try again!");
-//     return generatePassword();
-//   };
-
-//   while (passChars.length < characterAmount) {
-//     chosenOpts.push(getRandomChar(passInfo));
+// while (true) {
+//   const length = ask('How many charcters would you like? (8-128)', TYPE_NUMBER);
+//   if (length <= 128 && length >= 8) {
+//     getPasswordOptions.length = length; 
+//     break;
+//   } else {
+//     alert("Password must be 8 to 128 characters long!");
 //   }
-  
-  
-  
-//   else {
-//     window.alert("You need to provide a valid length!");
-//   }
-//     return initialState;
-// }
 // }
 
-console.log(getPasswordOptions());
-// Function for getting a random element from an array
-function getRandom(arr) {
-return arr [Math.floor(Math.random()*arr.length)]
-}
-console.log(getRandom(arr))
-// Function to generate password with user input
-function generatePassword() {
+// const uppercase = ask('Would you like to use capital letters?', TYPE_BOOLEAN);
+// if (true) { getPasswordOptions.uppercase = uppercase; }
+//  //passwordOpts += upperCasedCharacters[Math.floor(Math.random() * upperCasedCharacters.length)];
 
-}
 
-// Get references to the #generate element
-var generateBtn = document.querySelector('#generate');
+// const lowercase = ask('Would you like to use lowercase letters?', TYPE_BOOLEAN);
+// if (true) { getPasswordOptions.lowercase = lowercase;}
+//  // passwordOpts += lowerCasedCharacters[Math.floor(Math.random() * lowerCasedCharacters.length)]; }
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector('#password');
+// const numbers = ask('Would you like to use numbers?', TYPE_BOOLEAN);
+// if (numbers) { getPasswordOptions.numbers = numbers;
+//   passCharacters.push(getRandomChar(getPasswordOptions.num));}
+//  // passwordOpts += numericCharacters[Math.floor(Math.random() * numericCharacters.length)]; }
 
-  passwordText.value = password;
-}
+// const specialchar = ask('Would you like to use special characters?', TYPE_BOOLEAN);
+// if (specialchar) { getPasswordOptions.specialchar = specialchar; }
+//   //passwordOpts += specialCharacters[Math.floor(Math.random() * specialCharacters.length)];}
 
-// Add event listener to generate button
-generateBtn.addEventListener('click', writePassword);
+// console.log(getPasswordOptions);
+// console.log(passwordOpts);
+
+
+// function ask(msg, type) {
+//   let result;
+//   if (type === TYPE_BOOLEAN) {
+//     result = confirm(msg);
+//   } else if (type === TYPE_NUMBER) {
+//     result = parseInt(prompt(msg));
+//   } else if (type === TYPE_STRING) {
+//     result = prompt(msg);
+//   } else {
+//     result = "";
+//   }
+//   return result;
+// }
+
+// let getRandomChar = function(fromString) {
+//   return fromString[Math.floor(Math.random() * fromString.length)];}
+// // function generateRandomPassword(length) {
+
+// // let passwordOpts = '';
+
+    
+// //     for (let i = 0; i < length; i++) {
+// //         const randomSet = Math.floor(Math.random() * 4);
+        
+// //         switch (randomSet) {
+// //             case 0:
+// //                 password += upperCasedCharacters[Math.floor(Math.random() * upperCasedCharacters.length)];
+// //                 break;
+// //             case 1:
+// //                 password += lowerCasedCharacters[Math.floor(Math.random() * lowerCasedCharacters.length)];
+// //                 break;
+// //             case 2:
+// //                 password += numericCharacters[Math.floor(Math.random() * numericCharacters.length)];
+// //                 break;
+// //             case 3:
+// //                 password += specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
+// //                 break;
+// //         }
+// //     }
+    
+// //     return password;
+// //   }
+// //     const randomPassword = generateRandomPassword(getPasswordOptions.length);
+// // console.log(randomPassword);
+
+// // Function for getting a random element from an array
+// let passwordGenerated = [];
+// function getRandom(specialCharacters) {
+// return passwordGenerated [Math.floor(Math.random()*specialCharacters.length)]
+// }
+// console.log(getRandom(specialCharacters))
+
+// function getRandom(numericCharacters) {
+// return passwordGenerated [Math.floor(Math.random()*numericCharacters.length)]
+// }
+// console.log(getRandom(numericCharacters))
+// // Function to generate password with user input
+// function generatePassword() {
+
+// }
+
+// // Get references to the #generate element
+// var generateBtn = document.querySelector('#generate');
+
+// // Write password to the #password input
+// function writePassword() {
+//   var password = generatePassword();
+//   var passwordText = document.querySelector('#password');
+
+//   passwordText.value = password;
+// }
+
+// // Add event listener to generate button
+// generateBtn.addEventListener('click', writePassword);
