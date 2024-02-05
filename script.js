@@ -114,4 +114,35 @@ function generatePassword() {
   var number = confirm("Would you like to use numbers?");
   var specialChar = confirm("Would you like to use special characters?");
 
+  if (uppercase) {
+    charAvailable = charAvailable.concat(upperCasedCharacters);
+    passChar += getRandom(upperCasedCharacters);
+  }
+
+  if (lowercase) {
+    charAvailable = charAvailable.concat(lowerCasedCharacters);
+    passChar += getRandom(lowerCasedCharacters);
+  }
+
+  if (number) {
+    charAvailable = charAvailable.concat(numericCharacters);
+    passChar += getRandom(numericCharacters);
+  }
+
+  if (specialChar) {
+    charAvailable = charAvailable.concat(specialCharacters);
+    passChar += getRandom(specialCharacters);
+  }
+
+  console.log(charAvailable);
+  console.log(passChar);
+
+  for (var i = passChar.length; i < passLenght; i++) {
+    passChar += getRandom(charAvailable);
+  }
+  console.log(passChar);
+
+  return passChar;
+}
+
 
