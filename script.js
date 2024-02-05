@@ -94,3 +94,9 @@ var charAvailable = [];
 var passChar = [];
 var passLenght = "";
 
+//function to take a random element from an array
+function getRandom(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+
