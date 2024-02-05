@@ -99,4 +99,19 @@ function getRandom(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
+function generatePassword() {
+  while (true) {
+    const length = prompt("How many charcters would you like? (8-128)");
+    if (length <= 128 && length >= 8) {
+      passLenght = parseInt(length);
+      break;
+    } else {
+      alert("Password must be 8 to 128 characters long!");
+    }
+  }
+  var lowercase = confirm("Would you like to use capital letters?");
+  var uppercase = confirm("Would you like to use lowercase letters?");
+  var number = confirm("Would you like to use numbers?");
+  var specialChar = confirm("Would you like to use special characters?");
+
 
